@@ -2,9 +2,9 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "rocketchat.fullname" . }}
+  name: {{ template "rocketchatcf.fullname" . }}
   labels:
-    app: {{ template "rocketchat.name" . }}
+    app: {{ template "rocketchatcf.name" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"

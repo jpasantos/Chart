@@ -2,9 +2,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ template "rocketchat.fullname" . }}
+  name: {{ template "rocketchatcf.fullname" . }}
   labels:
-    app: {{ template "rocketchat.name" . }}
+    app: {{ template "rocketchatcf.name" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -19,7 +19,7 @@ spec:
   - hosts:
     - {{ .Values.host }}
 {{- if (ne "-" .Values.ingress.secretName) }}
-    secretName: {{ .Values.ingress.secretName | default (printf "%s-tls" (include "rocketchat.fullname" .)) }}
+    secretName: {{ .Values.ingress.secretName | default (printf "%s-tls" (include "rocketchatcf.fullname" .)) }}
 {{- end }}
 {{- end }}
   rules:
@@ -28,6 +28,6 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: {{ template "rocketchat.fullname" . }}
+          serviceName: {{ template "rocketchatcf.fullname" . }}
           servicePort: 3000
 {{- end -}}
