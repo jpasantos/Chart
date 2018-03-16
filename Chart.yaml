@@ -17,7 +17,5 @@ sources:
 - https://github.com/jpasantos/Docker.Official.Image
 maintainers:
 - name: RocketChat
-  email: buildmaster@rocket.chat
-- name: geekgonecrazy
-- name: pierreozoux
+  email: nb18159@novabase.pt
 engine: gotpl
