@@ -22,6 +22,12 @@ spec:
         env:
         - name: DEPLOY_PLATFORM
           value: helm-chart
+        - name: ADMIN_USERNAME
+          value: admin
+        - name: ADMIN_PASS
+          value: admin
+        - name: ADMIN_EMAIL
+          value: admin@asdasdasdas.com
         - name: INSTANCE_IP
           valueFrom:
             fieldRef:
